@@ -45,7 +45,7 @@ class LogToDataFrame(object):
 
     def _create_initial_df(self, log_filename, all_fields, usecols, dtypes):
         """Internal Method: Create the initial dataframes by using Pandas read CSV (primary types correct)"""
-        return pd.read_csv(log_filename, sep='\t', nrows=300000, names=all_fields, usecols=usecols, dtype=dtypes, comment="#", na_values='-')
+        return pd.read_csv(log_filename, sep='\t', nrows=500000, names=all_fields, usecols=usecols, dtype=dtypes, comment="#", na_values='-')
 
     def create_dataframe(self, log_filename, ts_index=True, aggressive_category=True, usecols=None):
         """ Create a Pandas dataframe from a Bro/Zeek log file
